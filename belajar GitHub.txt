@@ -1,2 +1,18 @@
 belajar-GitHub
 Baris-kedua
+
+Syntax Git : 
+Perintah	Contoh	Fungsi / Penjelasan	Catatan penting / Masalah yang muncul
+git init	git init	Mengubah folder lokal menjadi repository Git	Harus dijalankan di folder project baru sebelum commit
+git clone <repo_url>	git clone https://github.com/user/repo.git	Mengambil (download) repo dari GitHub ke komputer lokal	Jika repo kosong → muncul warning: “You appear to have cloned an empty repository”
+git add .	git add .	Menambahkan semua file di folder ke staging area untuk commit	Jika folder kosong → commit tidak akan terjadi (nothing to commit)
+git commit -m "pesan commit"	git commit -m "first commit"	Membuat snapshot perubahan di Git	Jika belum git add → nothing to commit; Jika identity belum diatur → muncul Author identity unknown
+git config --global user.name "Nama Kamu"	git config --global user.email "email@domain.com"	Mengatur identitas penulis commit	Wajib di-set agar commit berhasil; bisa global (semua repo) atau lokal saja
+git branch -M main	git branch -M main	Mengganti nama branch utama menjadi main	Beberapa repo default pakai master, beberapa main
+git remote add origin <repo_url>	git remote add origin https://github.com/user/repo.git	Menghubungkan repo lokal ke GitHub remote	Jika remote sudah ada → muncul remote origin already exists
+git remote remove origin	git remote remove origin	Menghapus remote lama	Digunakan untuk mengganti remote yang salah (misal push ke repo orang)
+git push -u origin main	git push -u origin main	Mengirim commit lokal ke GitHub	Harus punya akses ke repo (jika repo orang lain → 403); Jika HTTPS, gunakan PAT; SSH bisa jadi alternatif
+git status	git status	Menampilkan status file di repo: untracked, staged, atau committed	Sangat berguna untuk cek kenapa commit gagal
+dir (Windows CMD) / ls (Git Bash)	dir	Melihat isi folder saat ini	Membantu cek apakah file sudah ada sebelum commit
+echo ... > filename	echo # Project > README.md	Membuat file baru lewat CMD	Berguna untuk membuat file pertama agar bisa commit
+
